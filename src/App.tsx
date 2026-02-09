@@ -1,20 +1,13 @@
-import React from "react";
-import { Header } from "./components/Header/Header";
-import { Hero } from "./components/Hero/Hero";
-import { Features } from "./components/Features/Features";
-import { Covers } from "./components/Covers/Covers";
-import { Footer } from "./components/Footer/Footer";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
-const App: React.FC = () => {
+export default function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Features />
-      <Covers />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/contacto" element={<Contact />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
-};
-
-export default App;
+}

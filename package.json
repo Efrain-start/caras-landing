@@ -6,6 +6,7 @@
     "@types/styled-components": "^5.1.36",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-router-dom": "^7.13.0",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.19"
   },
@@ -37,6 +38,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/react-dom": "^19.2.3"
   }
 }
