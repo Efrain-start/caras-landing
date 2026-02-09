@@ -1,34 +1,54 @@
 // src/components/Header/Header.tsx
 import React from "react";
-import { HeaderWrapper, Logo, IconsWrapper, Icon, Nav, NavButton } from "./HeaderStyles";
+import {
+  HeaderWrapper,
+  Logo,
+  IconsWrapper,
+  Icon,
+  Nav,
+  NavButton,
+} from "./HeaderStyles";
 
 export const Header: React.FC = () => {
   return (
     <HeaderWrapper>
-      <Logo>CARAS</Logo>
+      {/* Logo como link a inicio */}
+      <Logo as={NavButton} to="/" aria-label="Ir a inicio">
+        CARAS
+      </Logo>
 
       <Nav aria-label="Navegación principal">
-        <NavButton to="/">Inicio</NavButton>
-        <NavButton to="/contacto">Contacto</NavButton>
+        <ul>
+          <li>
+            <NavButton to="/" end>
+              Inicio
+            </NavButton>
+          </li>
+          <li>
+            <NavButton to="/contacto">Contacto</NavButton>
+          </li>
+        </ul>
       </Nav>
 
-      <IconsWrapper>
+      <IconsWrapper aria-label="Redes sociales">
         <Icon
           href="https://www.facebook.com/Revista.Caras/photos/?locale=es_LA"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Facebook"
+          aria-label="Facebook (se abre en una pestaña nueva)"
         >
-          f
+          <span aria-hidden="true">f</span>
         </Icon>
 
         <Icon
           href="https://www.instagram.com/carasmexico/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Instagram"
+          aria-label="Instagram (se abre en una pestaña nueva)"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             width="18"
             height="18"
             viewBox="0 0 24 24"
@@ -43,9 +63,9 @@ export const Header: React.FC = () => {
           href="https://x.com/CARASmexico"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="X"
+          aria-label="X (se abre en una pestaña nueva)"
         >
-          X
+          <span aria-hidden="true">X</span>
         </Icon>
       </IconsWrapper>
     </HeaderWrapper>

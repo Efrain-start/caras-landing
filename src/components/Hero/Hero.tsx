@@ -14,10 +14,10 @@ import { SubscriptionForm } from "../SubscriptionForm/SubscriptionForm";
 
 export const Hero: React.FC = () => {
   return (
-    <HeroSection>
+    <HeroSection as="section" aria-labelledby="hero-title">
       <HeroInner>
         <HeroText>
-          <Title>
+          <Title as="h1" id="hero-title">
             Suscríbete al newsletter de <Highlight>CARAS</Highlight>
           </Title>
 
@@ -26,10 +26,10 @@ export const Hero: React.FC = () => {
             <strong>directo a tu correo</strong>, varias veces por semana.
           </Subtitle>
 
-          <List>
-            <Item>Lo más relevante del día</Item>
-            <Item>Entrevistas y coberturas especiales</Item>
-            <Item>Tendencias, lifestyle y eventos</Item>
+          <List as="ul">
+            <Item as="li">Lo más relevante del día</Item>
+            <Item as="li">Entrevistas y coberturas especiales</Item>
+            <Item as="li">Tendencias, lifestyle y eventos</Item>
           </List>
         </HeroText>
 

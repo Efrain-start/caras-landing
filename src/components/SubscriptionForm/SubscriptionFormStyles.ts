@@ -18,7 +18,7 @@ export const Title = styled.h2`
 export const Subtitle = styled.p`
   margin: 0 0 1.5rem;
   font-size: 0.93rem;
-  color: #555;
+  color: #444; /* antes #555: un poquito más contraste */
 `;
 
 export const Form = styled.form`
@@ -40,14 +40,21 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   border-radius: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid #d0d0d0; /* un poco más definido */
   padding: 0.75rem 0.9rem;
   font-size: 0.95rem;
 
-  &:focus {
+  /* Focus accesible para teclado */
+  &:focus-visible {
     outline: none;
     border-color: #c41230;
-    box-shadow: 0 0 0 2px rgba(196, 18, 48, 0.2);
+    box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.25);
+  }
+
+  /* Estado de error (cuando aria-invalid=true) */
+  &[aria-invalid="true"] {
+    border-color: #b00020;
+    box-shadow: 0 0 0 3px rgba(176, 0, 32, 0.2);
   }
 `;
 
@@ -67,10 +74,23 @@ export const Button = styled.button`
     transform: translateY(-1px);
     box-shadow: 0 10px 25px rgba(196, 18, 48, 0.35);
   }
+
+  /* Focus accesible */
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(196, 18, 48, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
 `;
 
 export const Helper = styled.p`
   margin: 0.4rem 0 0;
   font-size: 0.8rem;
-  color: #777;
+  color: #555; /* antes #777: mejor contraste */
 `;

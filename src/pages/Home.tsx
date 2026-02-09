@@ -4,7 +4,6 @@ import { Features } from "../components/Features/Features";
 import { Covers } from "../components/Covers/Covers";
 import { Footer } from "../components/Footer/Footer";
 
-
 export default function Home() {
   return (
     <>
@@ -13,25 +12,17 @@ export default function Home() {
         Saltar al contenido
       </a>
 
-      <header role="banner">
+      <header>
         <Header />
       </header>
 
-      <main id="contenido" role="main">
+      <main id="contenido" tabIndex={-1}>
         <Hero />
-
-        
-
-        <section aria-label="Beneficios del newsletter">
-          <Features />
-        </section>
-
-        <section aria-label="Portadas destacadas">
-          <Covers />
-        </section>
+        <Features />
+        <Covers />
       </main>
 
-      <footer role="contentinfo">
+      <footer>
         <Footer />
       </footer>
     </>

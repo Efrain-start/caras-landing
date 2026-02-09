@@ -61,7 +61,7 @@ export const Item = styled.li`
     position: absolute;
     left: 0;
     top: 0.05rem;
-    color: #d62828;
+    color: #b00020; /* antes #d62828: más contraste */
     font-weight: 700;
   }
 `;
